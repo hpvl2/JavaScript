@@ -1,3 +1,8 @@
-const funcMultSum = (a, b) => {
-    console.log(`mult: ${a * b}, sum: ${a + b}`);
-}
+/* 
+В переменных a и b хранятся числа. Написать программу, которая
+выводит в консоль произведение и сумму этих чисел
+*/
+
+export const funcMultSum = (a, b) => {
+  console.log(`${a * b}, ${a + b}`);
+};
