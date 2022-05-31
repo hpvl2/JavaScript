@@ -1,8 +1,47 @@
 {
   "devDependencies": {
-    "jest": "^28.1.0"
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@types/jest": "^27.5.1",
+    "babel-jest": "^28.1.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2"
   },
   "scripts": {
-    "test" : "jest"
+    "test": "jest",
+    "lint": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "prepare": "husky install"
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpvl2/JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hpvl2/JavaScript/issues"
+  },
+  "homepage": "https://github.com/hpvl2/JavaScript#readme",
+  "description": "",
+  "dependencies": {
+    "-": "^0.0.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
