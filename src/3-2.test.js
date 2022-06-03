@@ -1,19 +1,11 @@
 import { multTable } from "./3-2";
 
 describe("IntSum", () => {
-  const log = console.log;
-
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
-
-  afterAll(() => {
-    console.log = log;
-  });
+  const logSpy = jest.spyOn(console, "log");
 
   it("return mult table 7 x 9", () => {
     multTable(7, 9);
-    expect(console.log.mock.calls).toEqual([
+    expect(logSpy.mock.calls).toEqual([
       ["7 x 1 = 7"],
       ["7 x 2 = 14"],
       ["7 x 3 = 21"],

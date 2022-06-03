@@ -1,15 +1,7 @@
 import { arrays } from "./5";
 
 describe("arrays function", () => {
-  const log = console.log;
-
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
-
-  afterAll(() => {
-    console.log = log;
-  });
+  const logSpy = jest.spyOn(console, "log");
 
   it("it's a function", () => {
     arrays();
@@ -18,17 +10,17 @@ describe("arrays function", () => {
 
   it("sum of array elements", () => {
     arrays();
-    expect(console.log).toHaveBeenCalledWith(55);
+    expect(logSpy).toHaveBeenCalledWith(55);
   });
 
   it("elements of array x2", () => {
     const expected = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
     arrays();
-    expect(console.log).toHaveBeenCalledWith(expected);
+    expect(logSpy).toHaveBeenCalledWith(expected);
   });
 
   it("return max and min elements of array", () => {
     arrays();
-    expect(console.log).toHaveBeenCalledWith("max: 10, min: 1");
+    expect(logSpy).toHaveBeenCalledWith("max: 10, min: 1");
   });
 });
