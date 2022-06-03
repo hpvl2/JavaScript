@@ -4,16 +4,9 @@
 пользователя.
 */
 
-const user1 = { name: "Alex", birthDay: "12.03.1992" };
-const user2 = { name: "Igor", birthDay: "02.05.1989" };
+const user1 = new Date("1990-10-01");
+const user2 = new Date("1993-10-01");
 
-export function youngUser(...data) {
-  data.map((item) => {
-    const [dd, mm, yy] = item.birthDay.split(".");
-    item.birthDayFrm = new Date(yy, mm, dd);
-    return item;
-  });
-
-  data.sort((a, b) => a.birthDayFrm - b.birthDayFrm).reverse();
-  return data[0].name;
+export function youngUser(user1, user2) {
+  return user1 > user2 ? "молодой user1" : "молодой user2";
 }
