@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     "import/prefer-default-export": "off",
     "no-unused-vars": "warn",
+    "no-useless-escape": "warn",
     "max-len": [
       "error",
       {
